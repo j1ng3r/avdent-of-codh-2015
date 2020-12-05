@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+   <PropertyGroup>
+      <RootNamespace>day2</RootNamespace>
+      <OutputType>Exe</OutputType>
+      <TargetFramework>net5.0</TargetFramework>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <Compile Include="puzzle1.fs"/>
+		<!-- <Compile Include="puzzle2.fs"/> -->
+   </ItemGroup>
+ </Project>
