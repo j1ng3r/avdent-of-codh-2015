@@ -2,3 +2,5 @@ obj/
 bin/
 *.fake
 *.ionide
+.fake
+.ionide
