@@ -1,8 +1,30 @@
-let indexed2 = Array.map Array.indexed >> Array.indexed
-let mapdex2 fn arr =
-   arr |> indexed2 |> Array.map (fun (i, arr1) -> arr1 |> Array.map (fun (j, b) -> fn (i,j) b))
-let parseString (str:string) :(bool -> bool) = 
+open System
 
-let updateMap (map:bool[][]) (str:string) = map |> mapdex2 (fun (i, j, b) -> )
+let lines = IO.File.ReadAllLines "input.txt"
 
-//Suffering
+type Op = TurnOn | TurnOff | Toggle
+type Coord = (int * int)
+module Coord =
+   let fromString (s: string): Coord =
+      let nums = s.Split ","
+      (int nums.[0], int nums.[1])
+
+type Instruction = {
+   Op   : Op
+   Start: (int * int)
+   End  : (int * int)
+}
+
+module Instruction =
+   // turn on 489,959 through 759,964
+   let fromString (s: string): Instruction =
+      let words = s.Split " "
+      match words with
+      | [|"turn"; "on"; Start; "through"; End|] -> {
+         Op = TurnOn
+         Start = Coord.fromString Start
+         End = Coord.fromString End
+      }
+      | _ -> 
+
+lines |> Array.map Instruction.fromString
