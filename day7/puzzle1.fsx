@@ -113,25 +113,35 @@ module BiWire =
 
 let reqsSatisfied (biwires: Map<Name, BiWire>) req = req |> Array.forall (fun name -> Option.isSome biwires.[name].Value)
 
-let lines = IO.File.ReadAllLines "input.txt"
-let wires = lines |> Array.map Wire.ofLine |> Map.ofArray
-let biwires = wires |> BiWire.ofWires
-let mutable biwireQ = biwires |> Map.filter (always BiWire.canResolve)
-for kvp in biwireQ do
-   let biwire = kvp.Value
-   biwire.Value <- Some(Wire.resolve biwire.Wire)
+let readBiWires filename =
+   let lines = IO.File.ReadAllLines filename
+   let wires = lines |> Array.map Wire.ofLine |> Map.ofArray
+   wires |> BiWire.ofWires
 
-while not (Map.isEmpty biwireQ) do
-   let (name, biwire) = biwireQ |> Map.getFirst
-   let value = Value.get biwire.Value
-   let strValue = string value
+let resolveBiWires biwires =
+   let mutable biwireQ = biwires |> Map.filter (always BiWire.canResolve)
 
-   for feedName in biwire.Feeds do
-      let feed = biwires.[feedName]
-      feed.Wire.Data <- feed.Wire.Data |> Data.map (fun feedreq -> if feedreq = name then strValue else feedreq)
-      feed.Wire.Req <- feed.Wire.Req |> Array.except [|name|]
-      if BiWire.canResolve feed then
-         biwireQ <- biwireQ.Add (feedName, feed)
-   biwireQ <- biwireQ.Remove name
+   while not (Map.isEmpty biwireQ) do
+      let (name, biwire) = biwireQ |> Map.getFirst
+      let value = Wire.resolve biwire.Wire
+      biwire.Value <- Some(value)
+      let strValue = string value
 
-printfn "%d" (Value.get biwires.["a"].Value)
+      for feedName in biwire.Feeds do
+         let feed = biwires.[feedName]
+         feed.Wire.Data <- feed.Wire.Data |> Data.map (fun feedreq -> if feedreq = name then strValue else feedreq)
+         feed.Wire.Req <- feed.Wire.Req |> Array.except [|name|]
+         if BiWire.canResolve feed then
+            biwireQ <- biwireQ.Add (feedName, feed)
+      biwireQ <- biwireQ.Remove name
+   biwires
+
+let getA (biwires: Map<Name, BiWire>) = Value.get biwires.["a"].Value
+
+let avalue = "input.txt" |> readBiWires |> resolveBiWires |> getA
+printfn "%d" avalue
+
+let nextBiWires = "input.txt" |> readBiWires
+nextBiWires.["b"].Wire.Data <- One (string avalue)
+let nextAvalue = nextBiWires |> resolveBiWires |> getA
+printfn "%d" nextAvalue
