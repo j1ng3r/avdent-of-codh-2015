@@ -6,7 +6,6 @@
    </PropertyGroup>
 
    <ItemGroup>
-      <Compile Include="puzzle1.fsx"/>
-		<!-- <Compile Include="puzzle2.fs"/> -->
+      <Compile Include="puzzles.fsx"/>
    </ItemGroup>
  </Project>
