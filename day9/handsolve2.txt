@@ -1,0 +1,134 @@
+AlphaCentauri to Snowdin = 4
+Snowdin to Arbre = 7
+Faerun to Norrath = 11
+Tristram to AlphaCentauri = 34
+Tambi to Arbre = 40
+AlphaCentauri to Faerun = 44
+Snowdin to Norrath = 48
+Tristram to Tambi = 63
+Faerun to Straylight = 66
+Tambi to Faerun = 68
+AlphaCentauri to Arbre = 74
+AlphaCentauri to Tambi = 79
+Snowdin to Straylight = 88
+Tristram to Straylight = 89
+Snowdin to Faerun = 95
+Tristram to Snowdin = 100
+Snowdin to Tambi = 105
+Tambi to Straylight = 107
+Tristram to Faerun = 108
+Tristram to Norrath = 111
+Norrath to Straylight = 115
+Straylight to Arbre = 127
+Tristram to Arbre = 132
+AlphaCentauri to Straylight = 133
+Tambi to Norrath = 134
+Norrath to Arbre = 135
+Faerun to Arbre = 144
+AlphaCentauri to Norrath = 147
+
+
+First Guess = (871):
+Faerun to Arbre = 144
+Norrath to Arbre = 135
+AlphaCentauri to Norrath = 147
+AlphaCentauri to Straylight = 133
+Tambi to Straylight = 107
+Snowdin to Tambi = 105
+Tristram to Snowdin = 100
+
+
+Worst Lower Bound = (825), ignore below 48:
+Tristram to Arbre = 132
+AlphaCentauri to Straylight = 133
+Tambi to Norrath = 134
+Norrath to Arbre = 135
+Faerun to Arbre = 144
+AlphaCentauri to Norrath = 147
+
+Snowdin to Norrath = 48
+Tristram to Tambi = 63
+Faerun to Straylight = 66
+Tambi to Faerun = 68
+AlphaCentauri to Arbre = 74
+AlphaCentauri to Tambi = 79
+Snowdin to Straylight = 88
+Tristram to Straylight = 89
+Snowdin to Faerun = 95
+Tristram to Snowdin = 100
+Snowdin to Tambi = 105
+Tambi to Straylight = 107
+Tristram to Faerun = 108
+Tristram to Norrath = 111
+Norrath to Straylight = 115
+Straylight to Arbre = 127
+Tristram to Arbre = 132
+AlphaCentauri to Straylight = 133
+Tambi to Norrath = 134
+Norrath to Arbre = 135
+Faerun to Arbre = 144
+AlphaCentauri to Norrath = 147
+
+Second Worst Lower Bound (-63):
+Norrath to Straylight = 115
+// Straylight to Arbre = 127
+// Tristram to Arbre = 132
+AlphaCentauri to Straylight = 133
+Tambi to Norrath = 134
+Norrath to Arbre = 135
+Faerun to Arbre = 144
+AlphaCentauri to Norrath = 147
+
+
+
+
+Faerun to Straylight = 66
+Tambi to Faerun = 68
+AlphaCentauri to Arbre = 74
+AlphaCentauri to Tambi = 79
+Snowdin to Straylight = 88
+Tristram to Straylight = 89
+Snowdin to Faerun = 95
+Tristram to Snowdin = 100
+Snowdin to Tambi = 105
+Tambi to Straylight = 107
+Tristram to Faerun = 108
+Tristram to Norrath = 111
+Norrath to Straylight = 115
+Straylight to Arbre = 127
+Tristram to Arbre = 132
+AlphaCentauri to Straylight = 133
+Tambi to Norrath = 134
+Norrath to Arbre = 135
+Faerun to Arbre = 144
+AlphaCentauri to Norrath = 147
+
+Faerun to Straylight = 66
+Tambi to Faerun = 68
+AlphaCentauri to Arbre = 74
+AlphaCentauri to Tambi = 79
+Snowdin to Straylight = 88
+Tristram to Straylight = 89
+Snowdin to Faerun = 95
+Tristram to Snowdin = 100
+Snowdin to Tambi = 105
+Tambi to Straylight = 107
+Tristram to Faerun = 108
+Tristram to Norrath = 111
+Norrath to Straylight = 115
+Straylight to Arbre = 127
+Tristram to Arbre = 132
+AlphaCentauri to Straylight = 133
+Tambi to Norrath = 134
+Norrath to Arbre = 135
+Faerun to Arbre = 144
+AlphaCentauri to Norrath = 147
+
+Faerun to Norrath = 11
+Tristram to AlphaCentauri = 34
+AlphaCentauri to Faerun = 44
+AlphaCentauri to Snowdin = 4
+Snowdin to Arbre = 7
+Tambi to Arbre = 40
+Tristram to Tambi = 63
+Snowdin to Norrath = 48

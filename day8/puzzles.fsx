@@ -1,4 +1,4 @@
-module Puzzle1
+module Puzzles
 open System
 
 type Mode = Count | Backslash | UnicodeSearch
@@ -23,14 +23,7 @@ let countRemovedChars (line: string): int =
    n - count
 
 let countAddedChars (line: string): int =
-   let n = line |> String.length
-   let mutable count = 2
-   for i = 0 to n - 1 do
-      count <- count +
-         match line.[i] with
-         | '\\' | '"' -> 2
-         | _ -> 1
-   count - n
+   2 + (line |> Seq.filter (fun v -> Seq.contains v "\"\\") |> Seq.length)
 
 let lines = IO.File.ReadAllLines "input.txt"
 let printCount fn = printf "%d%c" (lines |> Array.sumBy fn) '\n'

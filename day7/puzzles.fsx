@@ -1,4 +1,4 @@
-module Puzzle1
+module Puzzles
 open System
 open System.Collections.Generic
 
